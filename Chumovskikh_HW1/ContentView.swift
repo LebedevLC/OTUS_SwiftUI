@@ -26,14 +26,16 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let recipes: [Recipe] = Recipe.examples()
+    
     var body: some View {
         TabView {
-            FavoritesTabView()
+            FavoritesTabView(recipe: recipes.first)
                 .tag(0)
                 .tabItem {
                     Label("Favorites", systemImage: "star")
                 }
-            RecipeListTabView()
+            RecipeListTabView(recipes: recipes)
                 .tag(1)
                 .tabItem {
                     Label("Receipt", systemImage: "frying.pan")

@@ -16,6 +16,7 @@
 		4642BA912AA11CA2008FD075 /* FavoritesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BA902AA11CA2008FD075 /* FavoritesTabView.swift */; };
 		46E2CEBB2AA85FC500391A15 /* RecipeDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2CEBA2AA85FC500391A15 /* RecipeDestinationView.swift */; };
 		46E2CEBE2AA8623300391A15 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2CEBD2AA8623300391A15 /* Recipe.swift */; };
+		46E2CEC22AA86FDC00391A15 /* UIKitToSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2CEC12AA86FDC00391A15 /* UIKitToSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4642BA902AA11CA2008FD075 /* FavoritesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTabView.swift; sourceTree = "<group>"; };
 		46E2CEBA2AA85FC500391A15 /* RecipeDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDestinationView.swift; sourceTree = "<group>"; };
 		46E2CEBD2AA8623300391A15 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		46E2CEC12AA86FDC00391A15 /* UIKitToSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitToSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				4642BA902AA11CA2008FD075 /* FavoritesTabView.swift */,
+				46E2CEC12AA86FDC00391A15 /* UIKitToSwiftUIView.swift */,
 			);
 			path = FirstTab;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				46E2CEBB2AA85FC500391A15 /* RecipeDestinationView.swift in Sources */,
 				4642BA8F2AA11C65008FD075 /* SettingsTabView.swift in Sources */,
+				46E2CEC22AA86FDC00391A15 /* UIKitToSwiftUIView.swift in Sources */,
 				46E2CEBE2AA8623300391A15 /* Recipe.swift in Sources */,
 				4642BA812AA11BC5008FD075 /* ContentView.swift in Sources */,
 				4642BA7F2AA11BC5008FD075 /* Chumovskikh_HW1App.swift in Sources */,

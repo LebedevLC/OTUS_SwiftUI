@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecipeListTabView: View {
     
-    let recipes: [Recipe] = Recipe.examples()
+    let recipes: [Recipe]
     
     var body: some View {
         NavigationView {
@@ -27,6 +27,6 @@ struct RecipeListTabView: View {
 
 struct RecipeListTabView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeListTabView()
+        RecipeListTabView(recipes: Recipe.examples())
     }
 }
