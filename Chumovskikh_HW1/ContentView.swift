@@ -25,19 +25,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         TabView {
-            BestProductScreen()
+            FavoritesTabView()
                 .tag(0)
                 .tabItem {
-                    Label("Favorit", systemImage: "star")
+                    Label("Favorites", systemImage: "star")
                 }
-            ProductsListScreen()
+            RecipeListTabView()
                 .tag(1)
                 .tabItem {
-                    Label("Receipt", systemImage: "frying")
+                    Label("Receipt", systemImage: "frying.pan")
                 }
-            SettingsScreen()
+            SettingsTabView()
                 .tag(2)
                 .tabItem {
                     Label("Settings", systemImage: "gear")
