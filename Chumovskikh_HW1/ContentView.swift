@@ -26,16 +26,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let recipes: [Recipe] = Recipe.examples()
+    @StateObject var navigationManager = NavigationStateManager()
+    @State var selectedTabIndex = 0
     
     var body: some View {
-        TabView {
-            FavoritesTabView(recipe: recipes.first)
+        TabView(selection: $selectedTabIndex) {
+            FavoritesTabView(navigationManager: navigationManager, selectedTabIndex: $selectedTabIndex)
                 .tag(0)
                 .tabItem {
                     Label("Favorites", systemImage: "star")
                 }
-            RecipeListTabView(recipes: recipes)
+            RecipeListTabView(navigationManager: navigationManager)
                 .tag(1)
                 .tabItem {
                     Label("Receipt", systemImage: "frying.pan")

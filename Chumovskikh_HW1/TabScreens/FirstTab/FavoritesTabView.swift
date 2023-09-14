@@ -9,27 +9,31 @@ import SwiftUI
 
 struct FavoritesTabView: View {
     
-    let recipe: Recipe?
+    @StateObject var navigationManager: NavigationStateManager
+    @Binding var selectedTabIndex: Int
     @State var isLoaderAnimating: Bool = true
     
+    @StateObject var modelDataManager = DataSource()
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                Button("Go to favorite recipe") {
-                    guard let recipe else { return }
-                    NavigationLink(
-                        recipe.title,
-                        destination: RecipeDestinationView(recipe: recipe)
-                    )
-                }
-                UIKitToSwiftUIView(isAnimating: $isLoaderAnimating)
+        VStack(alignment: .center, spacing: 60) {
+            UIKitHearthView(isAnimating: $isLoaderAnimating)
+                .shadow(color: .red, radius: 10, x: 0, y: 0)
+                .frame(width: 250, height: 200, alignment: .center)
+                .blur(radius: 20)
+            Button("Перейти к случайному рецепту") {
+                guard let recipe = modelDataManager.recipes.randomElement() else { return }
+                navigationManager.selectedScreen = [recipe]
+                selectedTabIndex = 1
             }
-        }
+            .font(.headline)
+            .foregroundColor(.indigo)
+        }.padding(20)
     }
 }
 
 struct FavoritesTabView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritesTabView(recipe: Recipe(title: "Some title", receipt: "Some receipt"))
+        FavoritesTabView(navigationManager: NavigationStateManager(), selectedTabIndex: .constant(0))
     }
 }

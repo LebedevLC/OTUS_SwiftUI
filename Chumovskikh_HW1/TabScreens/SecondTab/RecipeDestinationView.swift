@@ -13,14 +13,20 @@ struct RecipeDestinationView: View {
     
     var body: some View {
         VStack {
-            Text(recipe.receipt)
+            Text(recipe.title)
+                .font(.largeTitle)
+            VStack(alignment: .leading, spacing: 12) {
+                Divider()
+                Text(recipe.receipt)
+                    .font(.body)
+            }.padding(22)
         }
-        .navigationTitle(recipe.title)
+        .padding(10)
     }
 }
 
 struct ReceiptDestinationView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeDestinationView(recipe: Recipe(title: "Some", receipt: "Some"))
+        RecipeDestinationView(recipe: DataSource().recipes.first!)
     }
 }

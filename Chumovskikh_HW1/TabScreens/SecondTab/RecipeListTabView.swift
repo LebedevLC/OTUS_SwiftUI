@@ -9,24 +9,22 @@ import SwiftUI
 
 struct RecipeListTabView: View {
     
-    let recipes: [Recipe]
+    @StateObject var navigationManager: NavigationStateManager
+    @StateObject var dataSource = DataSource()
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(recipes) { recipe in
-                    NavigationLink(
-                        recipe.title,
-                        destination: RecipeDestinationView(recipe: recipe)
-                    )
-                }
+        NavigationStack(path: $navigationManager.selectedScreen) {
+            RecipeRootView(dataSource: dataSource).navigationDestination(for: Recipe.self) { value in
+                RecipeDestinationView(recipe: value)
             }
         }
+        .environmentObject(navigationManager)
+        .environmentObject(dataSource)
     }
 }
 
 struct RecipeListTabView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeListTabView(recipes: Recipe.examples())
+        RecipeListTabView(navigationManager: NavigationStateManager())
     }
 }
